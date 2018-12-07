@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class EmployeeController extends Controller
+use App\Employee;
+class EmployeesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('employees.create');
+        //
     }
 
     /**
@@ -34,9 +34,14 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->input('name');
+        $employee= new Employee();
+
+        $employee->name = $request->input('name');
+        $employee->save();
+        return 'Saved';
+
     }
-    
+
     /**
      * Display the specified resource.
      *
