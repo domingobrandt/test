@@ -2,9 +2,11 @@
 @section('title','Employees Create')
 
 @section('content')
+<form class="from-group" action="/employee" method="Post">
+@csrf
 <div class="from-group">
     <label for="">Nombre</label>
-    <input type="text" class="from-control">
+    <input type="text" name="nombre" class="from-control">
 </div>
 
 <div class="from-group">
@@ -21,8 +23,11 @@
     <label for="">user id</label>
     <select class="from-control"></select>
 </div>
+
 <button type="submit" class="btn btn-primary">Guardar</button>
-</div>
+
+
+</form>
 @endsection
 {{--
 <html>

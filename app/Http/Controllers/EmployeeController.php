@@ -34,9 +34,9 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request->input('name');
     }
-
+    
     /**
      * Display the specified resource.
      *
